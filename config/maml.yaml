@@ -12,7 +12,7 @@ episode_size: 2
 train_episode: 2000
 test_episode: 600
 
-device_ids: 5
+device_ids: 0
 n_gpu: 1
 epoch: 100
 
@@ -23,13 +23,18 @@ optimizer:
   other: ~
 
 backbone:
-  name: Conv64F
+  name: resnet18
   kwargs:
-    is_flatten: True
-    is_feature: False
-    leaky_relu: False
-    negative_slope: 0.2
-    last_pool: True
+    is_flatten: False
+    avg_pool: False
+
+#  name: Conv64F
+#  kwargs:
+#    is_flatten: True
+#    is_feature: False
+#    leaky_relu: False
+#    negative_slope: 0.2
+#    last_pool: True
 
 classifier:
   name: MAML

@@ -341,6 +341,8 @@ class Trainer(object):
             viz_path = os.path.join(log_path, "tfboard_files")
             if self.rank == 0:
                 create_dirs([result_path, log_path, checkpoints_path, viz_path])
+                print("111111",create_dirs)
+                print("111111", log_path)
 
                 with open(
                     os.path.join(result_path, "config.yaml"), "w", encoding="utf-8"

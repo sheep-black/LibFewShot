@@ -165,11 +165,14 @@ def create_dirs(dir_paths):
     :param dir_paths:
     :return:
     """
+
     if not isinstance(dir_paths, (list, tuple)):
         dir_paths = [dir_paths]
+
     for dir_path in dir_paths:
         if not os.path.exists(dir_path):
             os.mkdir(dir_path)
+
 
 
 def prepare_device(rank, device_ids, n_gpu_use, backend, dist_url):
